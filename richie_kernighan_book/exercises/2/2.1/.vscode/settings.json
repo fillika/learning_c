@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.xxc": "cpp",
+        "float.h": "c"
+    }
+}
