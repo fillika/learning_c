@@ -8,7 +8,10 @@
 #define DIG_LIT_ENCODING_TYPE 0b010
 #define BYTE_ENCODING_TYPE 0b100
 
-char test_data[] = "Прив";
+#define EMPTY_BYTE_1 "11101100"
+#define EMPTY_BYTE_2 "00010001"
+
+char test_data[] = "Хабр"; // 1101000010100101110100001011000011010000101100011101000110000000
 
 /*
 https://habr.com/ru/articles/172525/
@@ -29,7 +32,21 @@ int main()
     char *binary = per_byte_coding(test_data, FIRST);
     if (binary != NULL)
     {
-        printf("Binary representation of '%s': %s\n", test_data, binary);
+        printf("Binary representation of '%s': %s\n", test_data, binary); // todo clean
+        printf("len: %lu\n", strlen(binary));                             // todo clean
+
+        // На этом этапе у меня есть строковое выражение данных в двоичном
+        // виде со всеми служебными добавлениями
+
+        // Сейчас нужно добавить нулей для размера, кратного 8.
+
+        while (strlen(binary) % 8 != 0)
+            strcat(binary, "0");
+
+        // todo определить конечную длину, согласно Qr_versions и CorrectionLevel
+
+        // Следом добавить 2 пустых байта поочередно, пока не наберем нужную длину
+
         free(binary);
     }
     else
