@@ -1,10 +1,8 @@
-#include <stdio.h>
+#ifndef ENUMS_H
+#define ENUMS_H
 
-#define DIGITAL_ENCODING_TYPE 0b001
-#define DIG_LIT_ENCODING_TYPE 0b010
-#define BYTE_ENCODING_TYPE 0b100
-
-enum QR_VERSIONS {
+enum Qr_versions
+{
     FIRST = 21,
     SECOND = 25,
     THIRD = 29,
@@ -47,35 +45,12 @@ enum QR_VERSIONS {
     FORTIETH = 177
 };
 
-enum CorrectionLevel {
-    LOW, // 7%
-    MEDIUM, // 15%
-    HIGH, // 25%
+enum CorrectionLevel
+{
+    LOW,      // 7%
+    MEDIUM,   // 15%
+    HIGH,     // 25%
     VERY_HIGH // 30%
 };
 
-char test_data[] = "ALEK OS";
-
-/*
-#1 Перевести данные в двоичный вид
-#2 Указать тип кодирования, с помощью которого Я переводил эти данные.
-#3 В зависимости от версии указать длину данных между типом и данными
-
-DIGITAL_ENCODING_TYPE
-
-0010 - 000000111 - 10010...10
-
-*/
-
-int main()
-{
-
-    
-
-    printf("QR_CODE_GENERATOR %d\n", DIG_LIT_ENCODING_TYPE);
-    printf("LOW %d\n", LOW);
-    printf("MEDIUM %d\n", MEDIUM);
-    printf("HIGH %d\n", HIGH);
-    printf("VERY_HIGHT %d\n", VERY_HIGH);
-    return 0;
-}
+#endif
