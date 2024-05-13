@@ -10,7 +10,7 @@ char *per_byte_coding(char text[], enum Qr_versions version)
 {
     int len = strlen(text);
     int v = version < TENTH ? 8 : 16;
-    char *binary = malloc(len * 8 + v + CODING_TYPE_SIZE + 1); // +4 - способ кодирования (0100), +8 - Побайтовое кодирование для версий 1-9
+    char *binary = malloc(len * 32 + v + CODING_TYPE_SIZE + 1); // +4 - способ кодирования (0100), +8 - Побайтовое кодирование для версий 1-9
     if (binary == NULL)
         return NULL;
 

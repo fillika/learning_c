@@ -47,10 +47,10 @@ enum Qr_versions
 
 enum CorrectionLevel
 {
-    LOW,      // 7%
-    MEDIUM,   // 15%
-    HIGH,     // 25%
-    VERY_HIGH // 30%
+    L, // 7%
+    M, // 15%
+    Q, // 25%
+    H  // 30%
 };
 
 #endif
